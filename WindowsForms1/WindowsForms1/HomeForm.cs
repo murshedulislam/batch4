@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace WindowsForms1
 {
-    public partial class Form1 : Form
+    public partial class HomeForm : Form
     {
-        public Form1()
+        public HomeForm()
         {
             InitializeComponent();
+        }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello "+ showName.Text + comboBox.Text);
+        }
+
+        private void showName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
