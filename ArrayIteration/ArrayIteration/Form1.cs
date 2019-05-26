@@ -109,17 +109,17 @@ namespace ArrayIteration
             string message = "";
             foreach(int j in number)
             {
-                int dup = 0;
+                
                 int count = 1;
                 for (int i = 0; i < number.Length; i++)
                 {
                     if(j == number[i])
                     {
                         count++;
-                        dup = j;
+                        
                     }
                 }
-                if (count > 1 & j!=dup )
+                if (count > 1)
                 {
                     message = message + "Duplicate = " + j + "\n";
                    
