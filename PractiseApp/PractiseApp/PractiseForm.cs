@@ -19,51 +19,35 @@ namespace PractiseApp
         List<string> users = new List<string>();
         List<string> names = new List<string>();
         List<int> ages = new List<int>();
-        private void PractiseForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
             try
             {
                 string user = userTextBox.Text;
-                string name;
-                int age;
-                string chkage = ageTextBox.Text;
-                checkLabel.Text = "";
-                checkAgeLabel.Text = "";
+                string name = nameTextBox.Text;
+                int age = Convert.ToInt32(ageTextBox.Text);
 
-                if (UserExists(user))
+                if (string.IsNullOrEmpty(userTextBox.Text))
                 {
-                    checkLabel.Text = user + " already exists";
+                    MessageBox.Show("User ShOULD NOT BE EMPLTY");
                     return;
                 }
-                if (String.IsNullOrEmpty(user))
+                if (UserExists(userTextBox.Text))
                 {
-                    checkLabel.Text = "User Field is empty";
+                    MessageBox.Show("User already exist!");
                     return;
                 }
 
-                if (String.IsNullOrEmpty(ageTextBox.Text))
+                if (string.IsNullOrEmpty(ageTextBox.Text))
                 {
-                    checkAgeLabel.Text = "The age field is empty.";
+                    MessageBox.Show("Age ShOULD NOT BE EMPLTY");
                     return;
                 }
-                for(int i = 0; i < (ageTextBox.Text).Length; i++)
-                {
-                    if (!Char.IsDigit(chkage[i]))
-                    {
-                        checkAgeLabel.Text = "The age field will only contain integers.";
-                        return;
-                    }
-                }
 
-                user = userTextBox.Text;
-                name = nameTextBox.Text;
-                age = Convert.ToInt32(ageTextBox.Text);
 
+
+                //age = Convert.ToInt32(ageTextBox.Text);
                 users.Add(user);
                 names.Add(name);
                 ages.Add(age);
@@ -72,7 +56,6 @@ namespace PractiseApp
 
             catch (Exception exception)
             {
-
                 MessageBox.Show(exception.Message);
 
             }
@@ -80,31 +63,35 @@ namespace PractiseApp
          private string Display()
         {
             string message = "";
-            message = "SI\tUsers\tNames\tAges\n";
-            for(int index = 0; index < users.Count; index++)
+            message = "SI\tUser\tName\tAge\n";
+            int index = 0;
+           
+            foreach (string user in users)
             {
-                message = message + index + "\t" + users[index] + "\t" + names[index] + "\t" + ages[index] + "\n";
+                message = message +(index+1)+ "\t" + user + "\t" + names[index] + "\t" + ages[index] + "\n";
+                index++;
             }
             return message;
-
         }
-        
         private bool UserExists(string user)
         {
-            bool isExists = false;
+            bool isExist = false;
 
-            foreach(string userchk in users)
+            foreach(var userchk in users)
             {
                 if (userchk == user)
-                    isExists = true;
+                    isExist = true;
             }
-
-            return isExists;
+            return isExist;
         }
 
-            }
+        private void PractiseForm_Load(object sender, EventArgs e)
+        {
 
         }
+    }
+
+ }
 
        
 

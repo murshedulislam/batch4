@@ -36,8 +36,6 @@
             this.ageLabel = new System.Windows.Forms.Label();
             this.displayRichTextBox = new System.Windows.Forms.RichTextBox();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.checkLabel = new System.Windows.Forms.Label();
-            this.checkAgeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // userTextBox
@@ -106,30 +104,11 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // checkLabel
-            // 
-            this.checkLabel.AutoSize = true;
-            this.checkLabel.Location = new System.Drawing.Point(276, 46);
-            this.checkLabel.Name = "checkLabel";
-            this.checkLabel.Size = new System.Drawing.Size(0, 13);
-            this.checkLabel.TabIndex = 8;
-            // 
-            // checkAgeLabel
-            // 
-            this.checkAgeLabel.AutoSize = true;
-            this.checkAgeLabel.ForeColor = System.Drawing.Color.Crimson;
-            this.checkAgeLabel.Location = new System.Drawing.Point(265, 142);
-            this.checkAgeLabel.Name = "checkAgeLabel";
-            this.checkAgeLabel.Size = new System.Drawing.Size(0, 13);
-            this.checkAgeLabel.TabIndex = 9;
-            // 
             // PractiseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkAgeLabel);
-            this.Controls.Add(this.checkLabel);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.displayRichTextBox);
             this.Controls.Add(this.ageLabel);
@@ -156,8 +135,6 @@
         private System.Windows.Forms.Label ageLabel;
         private System.Windows.Forms.RichTextBox displayRichTextBox;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Label checkLabel;
-        private System.Windows.Forms.Label checkAgeLabel;
     }
 }
 
